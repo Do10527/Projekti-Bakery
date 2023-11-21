@@ -33,7 +33,7 @@
    line-height: 50px;
 }
 ul{
-    width: 30%;
+    width: 80%;
     display: flex;
     list-style: none;
     justify-content: space-evenly;
@@ -44,10 +44,11 @@ ul li{
     margin:5px;
 }
 ul li:hover {
-    font-weight: bold;
+    size: 15Px;
+    font-weight:bolder;
     cursor: pointer;
-    background-color:brown;
-    border-radius: 15px;
+    background-color:rgb(161, 120, 118);
+    border-radius: 10px;
 }
 .clearfix::after
 {
@@ -58,11 +59,11 @@ ul li:hover {
 #Header
 {
     min-height: 380px;
-    background-color:;
+    /*background-color:;*/
     text-align: center;
     line-height:100px;
     margin-bottom: 10px;
-    background-image: url("headeri.png");
+    background-image: url(".jpg");
     border-style: outset; 
   border-color:rgb(89, 50, 38) ;
   border-radius: 15px;
@@ -72,7 +73,7 @@ ul li:hover {
 {
     width:100%;
     min-height:88px ;
-    background-color:rgb(89, 50, 38);
+    /*background-color:rgb(161, 120, 118);*/
     text-align: center;
     line-height: 88px;
     margin-bottom: 10px;
@@ -177,3 +178,8 @@ color:  #8f9296;
     width:80%;
     margin:auto;
 }
+
+/*LOG IN FORM*/
+
+  /*Contact Form*/
+  
