@@ -24,32 +24,37 @@
     line-height: 50px;
     padding-left: 2%;
    
+   
 }
 #navigation
 {
     width:50%;
-    min-height: 50px;
+    min-height: 10px;
    float: right;
-   line-height: 50px;
+   line-height: 10px;
 }
 ul{
-    width: 80%;
-    display: flex;
-    list-style: none;
-    justify-content: space-evenly;
-    float:right;
-     margin-right:45px;
+    list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+ 
+
 }
-ul li{
-    margin:5px;
+li{
+    float: right;
 }
-ul li:hover {
-    size: 15Px;
-    font-weight:bolder;
-    cursor: pointer;
-    background-color:rgb(161, 120, 118);
-    border-radius: 10px;
+li a{
+    display: block;
+    color:black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
 }
+
+li a:hover {
+    background-color:burlywood;
+  }
 .clearfix::after
 {
   content:" ";
@@ -179,11 +184,153 @@ color:  #8f9296;
     margin:auto;
 }
 
-/*LOG IN FORM*/
+/*LOG IN  dhe  Register form FORM*/
 
-<<<<<<< HEAD
+.P2
+{
+    text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  display: inline-block;
+  cursor: pointer;
+ 
+}
 
-=======
-  /*Contact Form*/
->>>>>>> c1bb5c865bf8cffd3936686e27ff979dd5febafb
-  
+h1 , h3
+{
+    font-size: 44p;
+    color:darkred;
+}
+h2
+{
+    font-size: 18px;
+    font-family: monospace;
+    font-style: oblique;
+}
+.Texti
+{
+    letter-spacing: 2px;
+    line-height: 150%;
+    border: 2px solid brown;
+    padding: 8px;
+    padding: 10px 50px 20px;
+    margin: 10px 50px 20px;
+   
+}
+/*.container-reg {
+    width: 330px;
+    border-radius: 5px;
+    background-image: url(../img/18.jpg);
+    padding: 20px;
+    margin-left: 500px;
+}
+
+
+  .content {
+
+    margin-left: 250px;
+    margin-right: 250px;
+    margin-top: 20px;
+    margin-top: 20px;
+   
+  }
+
+  button
+{
+            background-color: white;
+          /* margin: auto;
+}
+*/
+.register
+{
+    padding: 16px;
+    background-color: white;
+}
+​input[type=text],input[type=username],input[type=password],input[type=email] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+  }
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+
+/*input
+{
+    border-radius: 10px;
+    width:220px;
+    height:40px;
+    text-indent: 5px;
+    
+}
+input:focus
+{
+    outline:none;
+}*/
+fieldset
+{
+    width:100%;
+    height: 680px;
+    border-radius:111px;
+    outline:none;
+    background-color: transparent;
+        
+}
+tableauto
+{
+    font-size: 10px;
+    margin:auto;
+}
+td
+{
+    line-height:50px;
+}
+input[type="submit"]
+{
+    width: 70px;
+    height: 30px;
+    background-color:white;
+}
+input[type="submit"]:hover
+{
+    background-color:white;
+    
+}
+
+input[type="reset"]
+{
+      width: 70px;
+    height: 30px;
+    background-color:white;
+}
+input[type="reset"]:hover
+{
+    background-color:brown;
+    
+}
+
+.button
+{
+    display: inline-block;
+    font-size:1.15rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-width: 2px;
+    border-style: solid;
+    padding:.5em 1.75 em;
+}
+.button-accent
+{
+    color:#00ff6c;
+    border-color: #00ff6c;
+}
+.container
+{
+    width: 95%;
+    margin:0 auto;
+}
+
