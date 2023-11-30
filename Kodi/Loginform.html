@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF=8" >
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" >
     <title>
       Bakery
     </title>
@@ -9,22 +10,37 @@
 </head>
 <div id="wrapper-div">
 <body>
-<div id="Divi1" class="clearfix">
-  <div id="logo"><img src="img/logo.png" alt="" class="img"></div>
-    <div id="navigation">      
-      <ul>
-        
-        <li><a href="Register.html" ><button class="P2" type="button">Register</button></a></li>
-        <li><a href="Hyrje.html"><button class="P2" type="button">Login</button></a></li>
-        <li><a href="Recetat.html">Recetat</a></li>
-        <li><a href="ContactUs.html">ContactUs</a></li>
-        <li><a href="AboutUs.html">AboutUs</a></li>
-        <li><a href="Bakery.html">Home</a></li>
-      </ul>
+    <div class="nav-bar">
+        <ul>
+            
+            <li class="Active"><a href="Bakery.html"> Home</a></li>
+            <li class="Active"><a href="AboutUs.html">AboutUs</a></li>
+            <li class="Active"><a href="News.html">News</a></li>
+            <li class="Active"><a href="Recetat.html">Recetat</a></li>
+            <li class="Active"><a href="ContactUs.html">ContactUs</a></li>
+            </ul>
 
-    </div>
-</div>
+        
+        </div>
 <div id="Header">
+
+  
+    <form name="form" id="form"method="post" action="Bakery.jsx" onsubmit="return validateform()">
+    <h1>Log in</h1>
+    
+    <div class="input-group">
+    <label for="email">Email</label>
+    <input type="text" id="email" name="email" >
+    <div class="error"></div>
+    </div>
+    <div class="input-group">
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password">
+    <div class="error"></div>
+    </div>
+    
+    <button type="submit">Log in</button>
+    </form>
  
 </div>
 <footer>
@@ -54,7 +70,6 @@
       </div>
   
 </footer>
-</div>
 </body>
 </div>
 </html>
