@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+  <meta charset="UTF=8" >
+  <meta name="viewport" content="width=device-width,initial-scale=1" >
     <title>
       Bakery
     </title>
@@ -9,53 +10,37 @@
 </head>
 <div id="wrapper-div">
 <body>
-<div id="Divi1" class="clearfix">
-  <div id="logo"><img src="img/logo.png" alt="" class="img"></div>
-    <div id="navigation">
-      <ul>
-        <li><a href="Register.html" ><button class="P2" type="button">Register</button></a></li>
-        <li><a href="Hyrje.html"><button class="P2" type="button">Login</button></a></li>
-        <li><a href="Recetat.html">Recetat</a></li>
-        <li><a href="ContactUs.html">ContactUs</a></li>
-        <li><a href="AboutUs.html">AboutUs</a></li>
-        <li><a href="Bakery.html">Home</a></li>
-        </ul> 
-    </div>
-</div>
+ <div class="nav-bar">
+  <ul>
+      <li class="Active"><a href="Bakery.html"> Home</a></li>
+      <li class="Active"><a href="AboutUs.html">AboutUs</a></li>
+      <li class="Active"><a href="News.html">News</a></li>
+      <li class="Active"><a href="Recetat.html">Recetat</a></li>
+      <li class="Active"><a href="ContactUs.html">ContactUs</a></li>
+      </ul>
+  </div>
 <div id="Header">
-  <div class="content">
-    <div class="section">
-      <h2>Contact Us</h2>
-      <form name="contact" onsubmit="return contactvalidate()" method="post">
-        <label for="fname">First Name</label>
-        <input
-          type="text"
-          class="tekst"
-          id="fname"
-          name="firstname"
-          placeholder="Your name.."
-        />
-
-        <label for="lname">Last Name</label>
-        <input
-          type="text"
-          class="tekst"
-          id="lname"
-          name="lastname"
-          placeholder="Your last name.."
-        />
-
-        <label for="lname">Email</label>
-        <input
-          type="email"
-          class="tekst"
-          id="email"
-          name="email"
-          placeholder="Your email.."
-        />
-
+  <form name="form" id="form"method="post" action="Bakery.jsx" onsubmit="return validateform()">
+  <h2>Contact Us</h2>
+  <div class="input-group">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name">
+    <div class="error"></div>
+    </div>
+    <div class="input-group">
+      <label for="surname">Surname</label>
+      <input type="text" id="surname" name="surname">
+      <div class="error"></div>
+      </div>
+  
+  <div class="input-group">
+  <label for="email">Email</label>
+  <input type="text" id="email" name="email" >
+  <div class="error"></div>
+  </div>
+  <div class="input-group">
         <label for="country">Country</label>
-        <select class="select1" id="country" name="country">
+        <select class="select" id="country" name="country">
           <option value="1">Prishtina</option>
           <option value="2">Gjilani</option>
           <option value="3">Ferizaj</option>
@@ -64,23 +49,8 @@
           <option value="6">Peja</option>
           <option value="7">Mitrovica</option>
         </select>
-        <label for="gender">Gender</label>
-        <br />
-        <input
-          class="inputi"
-          type="radio"
-          name="gender"
-          value="male"
-          checked
-        />
-        Male<br />
-        <input class="inputi" type="radio" name="gender" value="female" />
-        Female<br />
-        <input class="inputi" type="radio" name="gender" value="other" />
-        Other
-        <br />
-        <br />
-
+      </div>
+    
         <label for="subject">Subject</label>
         <textarea
           id="subject"
@@ -90,14 +60,9 @@
           style="height: 200px;"
         ></textarea>
 
-        <input type="submit" class="submit" value="Submit" />
+        <button type="submit">Send</button>
       </form>
     </div>
-  </div>
- 
- 
-</div>
-
 
 <footer>
   <div class="footer">
@@ -126,7 +91,6 @@
       </div>
   
 </footer>
-</div>
 </body>
 </div>
 </html>
