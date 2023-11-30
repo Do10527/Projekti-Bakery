@@ -2,21 +2,91 @@
 {
     margin:0px;
     padding:0px;
-    font-family: Arial, Helvetica, sans-serif;
-    box-sizing:border-box; 
-    color:black;
+    /*box-sizing:border-box; */
+    
+   
 }
-#Divi1
+body
 {
-    width:100%;
-    min-height: 30px;
-  border-style: outset; 
-  border-color:rgb(89, 50, 38) ;
-  border-radius: 15px;
-  border-width: 5px;
-    margin-bottom: 10px;
+   background-image: url(img/Prapavija.jpg);
+   background-size: cover;
+   background-position:center;
+   height: 100vh;
+   min-height: 100px;
+  
 }
-#logo
+   
+.nav-bar
+{   width:100%;
+    /*background:rgba(0, 0, 0, 0.603);*/
+    text-align: center;
+    border-style: outset; 
+    border-color:gray ;
+    border-radius: 5px;
+    border-width: 5px;
+    margin-bottom: 5px;
+   
+
+
+}
+ul{
+    display: inline-flex;
+    list-style: none;
+    color:#000;
+}
+ul li{
+    width: 110px;
+    margin: 5px;
+    padding: 8px;
+    
+  
+
+}
+ul li a{
+    text-decoration: none;
+    font-size: 14px;
+    padding:11px 13px;
+    transition: 0.4s ease;
+    
+    border-style: outset; 
+    border-color:gray ;
+    border-radius: 5px;
+    border-width: 2px;
+    margin-bottom: 5px;
+
+}
+ul li a:hover
+{
+    background-color: #fff;
+    color:#000;
+    border-radius: 6px;
+}
+ul li.Active a{
+    background-color:lightgray;
+    color:#000;
+}
+.P2
+{
+ 
+  display: inline-flex;
+  cursor: pointer;
+    margin: -15px;
+    padding: 10px;
+    border-style: outset; 
+    border-color:gray ;
+    border-radius: 5px;
+    border-width: 2px;
+    margin-bottom: 5px;
+
+ 
+
+  text-decoration: none;
+  font-size: 14px;
+  padding:11px 13px;
+ 
+}
+
+/*#logo
 {
     width:20%;
     min-height: 50px;
@@ -25,106 +95,98 @@
     padding-left: 2%;
    
    
-}
-#navigation
-{
-    width:50%;
-    min-height: 10px;
-   float: right;
-   line-height: 10px;
-}
-ul{
-    list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
- 
-
-}
-li{
-    float: right;
-}
-li a{
-    display: block;
-    color:black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-li a:hover {
-    background-color:burlywood;
-  }
-.clearfix::after
-{
-  content:" ";
-  display:block;
-  clear: both;
-}
+}*/
 #Header
 {
-    min-height: 380px;
-    /*background-color:;*/
-    text-align: center;
+    min-height: 200px;
+    width:100%;
+    /*text-align: center;*/
     line-height:100px;
     margin-bottom: 10px;
     background-image: url(".jpg");
     border-style: outset; 
-  border-color:rgb(89, 50, 38) ;
-  border-radius: 15px;
-  border-width: 5px;
+    border-color:black ;
+    border-radius: 5px;
+    border-width: 5px;
+    margin-bottom: 5px;
+}
+#Header  h1{
+   
+   
+    padding: 60px;
+    text-align: center;
+    font-size: 100px;  
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color:rgba(128, 128, 128, 0.603);
+    
+    
+     
 }
 #Ofertat
 {
     width:100%;
     min-height:88px ;
-    /*background-color:rgb(161, 120, 118);*/
-    text-align: center;
+    /*text-align: center;*/
     line-height: 88px;
     margin-bottom: 10px;
-    background-image: url("Dark.jpg");
-    border-radius: 15px;
-}
-main
-{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    border-radius: 15px;
     border-style: outset; 
-  border-color:rgb(89, 50, 38) ;
-  border-radius: 15px;
-  border-width: 5px;
-
+    border-color:gray ;
+    border-radius: 5px;
+    border-width: 5px;
+    margin-bottom: 5px;
 }
 
 .Fotot{
-    width: 90%;
+    width: 100%;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
     margin-top: 10px;
-}
+    border-style: outset; 
+    border-color:gray ;
+    border-radius: 5px;
+    border-width: 5px;
+    margin-bottom: 5px;
+  }
+
 .Boxi{
-    display: flex;
+    display: block;
     flex-direction: column;
     width: 250px;
     height: 200px;
    
 }
 .img{
-    width: 100%;
+    width: 80%;
     height: 75%;
     background-size: 100% 100%;
+    border-style: outset; 
+    border-color:gray ;
+    border-radius: 5px;
+    border-width: 2px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
 }
-.views_date{
+.Team img
+{
+    width: 30%;
+    height: 50%;
+    border-style: outset; 
+    border-color:gray ;
+    border-radius: 5px;
+    border-width: 2px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.pershkrimi{
     width: 250px;
     display: flex;
     justify-content: space-between;
     color: black;
     font-weight: bold;
+    display: inline;
 }
 footer
 {
@@ -133,11 +195,12 @@ footer
     text-align: center;
     line-height: 50px;
     margin-top: 10px;
-    border-radius: 15px;
     border-style: outset; 
-  border-color:rgb(89, 50, 38) ;
-  border-radius: 15px;
-  border-width: 5px;
+    border-color:gray ;
+    border-radius: 5px;
+    border-width: 5px;
+    margin-bottom: 5px;
+    background:lightgrey;
 }
 .footer{
     display: flex;
@@ -186,151 +249,140 @@ color:  #8f9296;
 
 /*LOG IN  dhe  Register form FORM*/
 
-.P2
-{
-    text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  display: inline-block;
-  cursor: pointer;
- 
-}
 
-h1 , h3
+ h3
 {
     font-size: 44p;
-    color:darkred;
+    margin-top: -5px;
+    padding: 0px 0px 0px;
+  
 }
 h2
 {
-    font-size: 18px;
-    font-family: monospace;
-    font-style: oblique;
+    padding: 30px;
+    text-align: center;
+    font-size: 50px;  
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color:rgba(128, 128, 128, 0.603);
+    
 }
 .Texti
 {
     letter-spacing: 2px;
     line-height: 150%;
-    border: 2px solid brown;
+    border: 2px solid black;
     padding: 8px;
     padding: 10px 50px 20px;
     margin: 10px 50px 20px;
    
 }
-/*.container-reg {
-    width: 330px;
+/*Regjister  and Log in Form*/
+
+#form{
+    width:400px;
+    margin:5vh auto 0 auto;
+    background-color: whitesmoke;
     border-radius: 5px;
-    background-image: url(../img/18.jpg);
-    padding: 20px;
-    margin-left: 500px;
+    padding:30px;
+    border-right:none;
+    border-style: outset; 
+    border-color:gray ;
+    border-radius: 5px;
+    border-width: 2px;
+    margin-bottom: 5px;
 }
 
-
-  .content {
-
-    margin-left: 250px;
-    margin-right: 250px;
-    margin-top: 20px;
-    margin-top: 20px;
-   
-  }
-
-  button
-{
-            background-color: white;
-          /* margin: auto;
+#form button{
+    background-color: gray;
+    color:white;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding:5px;
+    margin:20px 0px;
+    cursor:pointer;
+    font-size:20px;
+    width:50%;
 }
-*/
-.register
-{
-    padding: 16px;
-    background-color: white;
+.input-group{
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    line-height: 15%;
 }
-​input[type=text],input[type=username],input[type=password],input[type=email] {
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    display: inline-block;
-    border: none;
-    background: #f1f1f1;
-  }
-  input[type=text]:focus, input[type=password]:focus {
-    background-color: #ddd;
-    outline: none;
-  }
 
-/*input
-{
-    border-radius: 10px;
-    width:220px;
-    height:40px;
-    text-indent: 5px;
-    
-}
-input:focus
-{
-    outline:none;
-}*/
-fieldset
+.gender
 {
     width:100%;
-    height: 680px;
-    border-radius:111px;
-    outline:none;
-    background-color: transparent;
-        
+    height: 5px;
+   
 }
-tableauto
+#country
 {
-    font-size: 10px;
-    margin:auto;
+   margin-top: 10px;
+   height: 30px;
+  
 }
-td
+textarea
 {
-    line-height:50px;
+    width: 300px;
 }
-input[type="submit"]
-{
-    width: 70px;
-    height: 30px;
-    background-color:white;
+
+.input-group input{
+    border-radius: 5px;
+    font-size:20px;
+    margin-top:6px;
+    padding:10px;
+    border:1px solid rgb(34,193,195) ;
+  
 }
-input[type="submit"]:hover
-{
-    background-color:white;
+
+.input-group input:focus{
+    outline:0;
+}
+
+.input-group .error{
+    color:rgb(242, 18, 18);
+    font-size:16px;
+    margin-top: 5px;
+}
+
+.input-group.success input{
+    border-color: #0cc477;
+}
+
+.input-group.error input{
+    border-color:rgb(206, 67, 67);
+}
+
+@media screen and (max-width: 768px) {
+    .nav-bar ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-bar a {
+        width: 100%;
+    }
+
+    .Boxi {
+        flex: 1 0 100%;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-left, .footer_foto {
+        flex: 1 0 100%;
+    }
+    .Team img {
+        max-width: 30%;
+        flex: 1 0 100%;
+      
+      }
     
+   
+  
+   
 }
-
-input[type="reset"]
-{
-      width: 70px;
-    height: 30px;
-    background-color:white;
-}
-input[type="reset"]:hover
-{
-    background-color:brown;
-    
-}
-
-.button
-{
-    display: inline-block;
-    font-size:1.15rem;
-    text-decoration: none;
-    text-transform: uppercase;
-    border-width: 2px;
-    border-style: solid;
-    padding:.5em 1.75 em;
-}
-.button-accent
-{
-    color:#00ff6c;
-    border-color: #00ff6c;
-}
-.container
-{
-    width: 95%;
-    margin:0 auto;
-}
-

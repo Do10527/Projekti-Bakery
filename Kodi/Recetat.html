@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF=8" >
+    <meta name="viewport" content="width=device-width,initial-scale=1" >
     <title>
       Bakery
     </title>
@@ -9,40 +10,36 @@
 </head>
 <div id="wrapper-div">
 <body>
-<div id="Divi1" class="clearfix">
-    <div id="logo"><img src="img/logo.png" alt="" class="img"></div>
-    <div id="navigation">
-        <ul>
-            <li><a href="Register.html" ><button class="P2" type="button">Register</button></a></li>
-            <li><a href="Hyrje.html"><button class="P2" type="button">Login</button></a></li>
-            <li><a href="Recetat.html">Recetat</a></li>
-            <li><a href="ContactUs.html">ContactUs</a></li>
-            <li><a href="AboutUs.html">AboutUs</a></li>
-            <li><a href="Bakery.html">Home</a></li>
-            </ul> 
-    </div>
-</div>
+        <div class="nav-bar">
+            <ul>
+                <li class="Active"><a href="Bakery.html"> Home</a></li>
+                <li class="Active"><a href="AboutUs.html">AboutUs</a></li>
+                <li class="Active"><a href="News.html">News</a></li>
+                <li class="Active"><a href="Recetat.html">Recetat</a></li>
+                <li class="Active"><a href="ContactUs.html">ContactUs</a></li>
+                </ul>
+            </div>
 <div id="Header"></div>
 <div id="Ofertat">Ofertat </div>
 <main class="clearfix">
 
   <div class="Fotot">
     <div class="Boxi">
-        <img src="F1.png" alt="" class="img">
+        <img src="img/F2.jpg" alt="" class="img">
         <div class="views_date">
             <p>Chocolate Cake</p>
            
         </div>
     </div>
     <div class="Boxi">
-        <img src="F2.jpg" alt="" class="img">
+        <img src="img/F3.jpg" alt="" class="img">
         <div class="views_date">
             <p>Blueberry Cake</p>
             
         </div>
     </div>
     <div class="Boxi">
-        <img src="F3.jpg" alt="" class="img">
+        <img src="img/F4.jpg" alt="" class="img">
         <div class="views_date">
             <p>Caramel Cake</p>
             
@@ -51,21 +48,21 @@
 
 
     <div class="Boxi">
-      <img src="F4.jpg" alt="" class="img">
+      <img src="img/F5.jpg" alt="" class="img">
       <div class="views_date">
           <p>24 Oct 2020</p>
           
       </div>
   </div>
   <div class="Boxi">
-      <img src="F5.jpg" alt="" class="img">
+      <img src="img/F6.jpg" alt="" class="img">
       <div class="views_date">
           <p>22 Oct 2020</p>
           
       </div>
   </div>
   <div class="Boxi">
-      <img src="F6.jpg" alt="" class="img">
+      <img src="img/F6.jpg" alt="" class="img">
       <div class="views_date">
           <p>18 Oct 2020</p>
           
@@ -73,21 +70,21 @@
   </div>
 
   <div class="Boxi">
-    <img src="F7.jpg" alt="" class="img">
+    <img src="img/F7.jpg" alt="" class="img">
     <div class="views_date">
         <p>12 Oct 2020</p>
         
     </div>
 </div>
 <div class="Boxi">
-    <img src="F8.jpg" alt="" class="img">
+    <img src="img/F8.jpg" alt="" class="img">
     <div class="views_date">
         <p>24 Sep 2020</p>
        
     </div>
 </div>
 <div class="Boxi">
-    <img src="F9.jpg" alt="" class="img">
+    <img src="img/F9.jpg" alt="" class="img">
     <div class="views_date">
         <p>21 Sep 2020</p>
         
@@ -123,7 +120,44 @@
         </div>
     
   </footer>
-  </div>
   </body>
   </div>
   </html>
+
+
+
+  
+
+  <!------------------tek butoni   shenojme  oneclick validimin------------------------------------------------------------------------
+  Validimi:
+  <script>
+let regex=/cat/;
+console.log(regex.test('c'));
+
+  let nameregex=/^[A-Z][a-z](3,8)$/;
+  let emailRegex=/[a-z]+#+[a-z]+\.+[a-z]{2-3}$/;
+
+  function validatefprm()
+  {
+    let nameInput=document.getElementById('name');
+    let namererror=document.getElementById('nameerror');
+    let emaiinput=document.getElementById('email');
+    let emailerror=document.getElementById('emailrror');
+    nameerror.innerText='';
+    emailerror.innerText='';
+
+    if(!nameregex.test(nameInput.value))
+    {
+         namererror.innerText='Emri duhet et filloje me shkronj te madhe,size 3-8'
+         return;
+    }
+    if(!emailRegex.test(emaiinput.value))
+    {
+         emailerror.innerText='invalid'
+         return;
+    }
+    alert('your data safe');
+  }
+  </script>
+
+  -->
