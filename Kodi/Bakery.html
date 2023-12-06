@@ -34,25 +34,78 @@
       <div class="centered">   <p style="font-family: Brush Script MT, Brush Script Std, cursive;
           font-size:40px;">Sweet Bakery</p></div>
     </div>
-    <div id="Ofertat">Ofertat </div>
+
+    <div >
+      <div class="saying" style="padding-right: 100px;">
+        shkrimi
+      </div>
+      <div class="slideshow-container" >
+
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 3</div>
+          <img src="img/oferta11.png" style="width:100%; height: 400px;">
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 3</div>
+          <img src="img/oferta21.png" style="width:100%; height: 400px;">
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 3</div>
+          <img src="img/oferta31.png" style="width:100%; height: 400px;">
+        </div>
+        
+        </div>
+        <br>
+        
+        <div class="dots">
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+          <span class="dot" ></span> 
+        </div>
+    </div>
+ 
+    <script>
+      let slideIndex = 0;
+      showSlides();
+      
+      function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+        setTimeout(showSlides, 4000); // Change image every 4 seconds
+      }
+      </script>
+    
     <main class="clearfix">
     
       <div class="Fotot">
         <div class="Boxi">
-         <img src="img/F1.png" alt="" class="img">         
+         <img src="img/c1.jpg" alt="" class="img">         
             <div class="views_date">
                 <p>Chocolate Cake</p>
             </div>
         </div>
         <div class="Boxi">
-            <img src="img/F2.jpg" alt="" class="img">
+            <img src="img/c2.jpg" alt="" class="img">
             <div class="views_date">
                 <p>Blueberry Cake</p>
                 
             </div>
         </div>
         <div class="Boxi">
-            <img src="img/F3.jpg" alt="" class="img">
+            <img src="img/c3.jpg" alt="" class="img">
             <div class="views_date">
                 <p>Caramel Cake</p>
                 
@@ -67,6 +120,29 @@
               
           </div>
       </div>
+      <div class="Boxi">
+        <img src="img/F4.jpg" alt="" class="img">
+        <div class="views_date">
+            <p>24 Oct 2020</p>
+            
+        </div>
+    </div>
+
+    <div class="Boxi">
+      <img src="img/F4.jpg" alt="" class="img">
+      <div class="views_date">
+          <p>24 Oct 2020</p>
+          
+      </div>
+  </div>
+  <div class="Boxi">
+    <img src="img/F4.jpg" alt="" class="img">
+    <div class="views_date">
+        <p>24 Oct 2020</p>
+        
+    </div>
+</div>
+
       <div class="Boxi">
           <img src="img/F5.jpg" alt="" class="img">
           <div class="views_date">
