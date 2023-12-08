@@ -33,10 +33,10 @@
   transform: translate(-50%, -50%);
 }
   
-  #wrapper-div {
+  /*#wrapper-div {
     width: 80%;
     margin: auto;
-  }
+  }*/
   
   .clearfix::after {
     content: " ";
@@ -576,88 +576,100 @@ select option:checked {
 }
 
  /* ------------SLLAJDERI----------------------------------------------*/
- .Slajderi  
- {
- display: none;
- text-align: center;
- padding: 20px;
- z-index: 1;
- 
- 
+ .Slajder 
+ { 
+  display: none;
+   padding: 20px;
+   z-index:1;
+   width: 100%;
+   align-items: center;
  }
  
- .Slajderi  img 
+ .Slajder  img 
  {
- 
- 
- padding: 50px 40px;
- position: relative;
- bottom: -330px;
- margin-bottom: 30px;
- margin-right: -40%;
- line-height: 1.2;
- border-radius: 100px;
- border-style: outset;
- border-width: 2px;
- border-color:palevioletred;
+   
+   border-radius: 90px;
+   border-style:outset;
+   border-width: 0.px;
+   border-color:palevioletred;
+   position:relative;
+   margin-bottom:-70%;
+   margin-left: 60%;
  
  }
  
  .slider-korniza {
- max-width: 800px;
+ max-width: 600px;
  position:relative;
- margin-top: 1px;
- margin-bottom: -30px;
- /*z-index: 1;*/
- z-index: 1;
- 
- 
+ margin-top: 20px;
  
  }
+.S1 img
+ {
+  border-radius: 90px;
+   border-style:outset;
+   border-width: 0.px;
+   border-color:palevioletred;
+   position:relative;
+   margin-bottom:-50%;
+   margin-left: 60%;
+   width: 50px;
+ }
+ .S2 img
+ {
+  border-radius: 90px;
+   border-style:outset;
+   border-width: 0.px;
+   border-color:palevioletred;
+   position:relative;
+   margin-bottom:-50%;
+   margin-left: 60%;
+   width: 50px;
+ }
  
+
  .prev, .next {
- cursor: pointer;
- position: absolute;
- top: 50%;
- width: auto;
- padding: 16px;
- bottom: 8px;
- color: white;
- font-weight: bold;
- font-size: 18px;
- transition: 0.6s ease;
- border-radius: 0 3px 3px 0;
- user-select: none;
+ cursor:pointer;
+ position: relative;
+
  }
- 
- .next {
- right: 0;
- border-radius: 3px 0 0 3px;
- }
- 
  .prev:hover, .next:hover {
- background-color: rgba(0,0,0,0.8);
- }
+  background-color: rgba(0,0,0,0.8);
+  }
  
  .text {
- color:black;
- letter-spacing: 0.5px;
- padding: 50px 40px;
- position: relative;
- bottom: 8px;
- width: 50%;
- height: 0%;
- margin-left: 100%;
- line-height: 1.2;
+ 
+  color:black;
+  letter-spacing: 0.5px;
+  padding: 50px 40px;
+  position: relative;
+  bottom: 20px;
+  width: 50%;
+  height: 0%;
+  margin-left: 130%;
+  line-height: 1.3;
+  border-radius: 100px;
+  border-style: outset;
+  border-width: 2px;
+  border-color:palevioletred;
+/*
+ line-height: 1.5;
  border-radius: 100px;
  border-style: outset;
  border-width: 2px;
  border-color:palevioletred;
- 
+ color:black;
+ letter-spacing: 0.5px;
+ padding: 20px 20px;
+ position:relative;
+ margin-bottom:-5%;
+ margin-left: 100%;
+ */
+
  }
  
  
- .dot {
+ .Slajder.dot {
  cursor: pointer;
  height: 15px;
  width: 15px;
@@ -665,13 +677,13 @@ select option:checked {
  background-color:#e01c6e;
  border-radius: 50%;
  display: inline-block;
- transition: background-color 0.6s ease;
+ 
  }
  
- .active, .dot:hover {
+ .Slajder.active, .dot:hover {
  background-color:rgba(216, 112, 147, 0.767);
  }
- .fade {
+ .Slajder.fade {
  animation-name: fade;
  animation-duration: 1.5s;
  }
