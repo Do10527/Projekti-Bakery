@@ -656,3 +656,30 @@ to {opacity: 1}
   width: 40%;
   float: right;
 }
+.Texti 
+{
+   letter-spacing: 2px;
+  line-height: 200%;
+  margin-top: 5px;
+  padding: 8px;
+ 
+}
+
+.Texti h1 , h2 {
+  text-align: center;
+  text-transform: uppercase;
+  color: #ff8c94;
+  margin-top: 100px;
+  
+}
+.Texti p {
+  text-indent: 40px;
+  text-align:center;
+  letter-spacing: 2px;
+  font: italic 1.2rem "Fira Sans", serif;
+  font-size: 20px;
+  margin-top: 20px;
+  padding-left: 15px;
+  
+  
+}
