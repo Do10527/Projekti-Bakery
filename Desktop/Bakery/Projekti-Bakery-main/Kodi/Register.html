@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta charset="UTF=8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>
+    Bakery
+  </title>
+  <link rel="stylesheet" href="Bakery.css">
+  <script defer src="Bakery.jsx"></script>
+</head>
+<div id="wrapper-div">
+  <body>
+      <div class="nav-bar">
+          <ul>
+              
+              <li class="Active"><a href="Bakery.html"> Home</a></li>
+              <li class="Active"><a href="AboutUs.html">AboutUs</a></li>
+              <li class="Active"><a href="News.html">News</a></li>
+              <li class="Active"><a href="Recetat.html">Recetat</a></li>
+              <li class="Active"><a href="ContactUs.html">ContactUs</a></li>
+      
+              <li><a href="Register.html" ><button class="P2" type="button" >Register</button></a></li>
+              <li><a href="Loginform.html"><button class="P2" type="button">Login</button></a></li>
+             
+          </div>
+         
+              
+    <div id="Header">
+
+      <form  id="form"  action="/" method="Get" >
+        <h2>Register</h2>
+     
+        <div class="input-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username">
+          <div class="error"></div>
+        </div>
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="text" id="email" name="email">
+          <div class="error"></div>
+        </div>
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password">
+          <div class="error"></div>
+        </div>
+        <div class="input-group">
+          <label for="cpassword">Confirm_Password</label>
+          <input type="password" id="cpassword" name="cpassword">
+          <div class="error"></div>
+        </div>
+        <div class="input-group">
+          <label for="birthday">Birthday:</label>
+          <input type="date" id="birthday" name="birthday"><br><br>
+        </div>
+        <div class="input-group">
+          <label for="country">Country</label>
+          <select class="select" id="country" name="country">
+            <option value="1">Prishtina</option>
+            <option value="2">Gjilani</option>
+            <option value="3">Ferizaj</option>
+            <option value="4">Prizreni</option>
+            <option value="5">Gjakova</option>
+            <option value="6">Peja</option>
+            <option value="7">Mitrovica</option>
+          </select>
+          <div class="error"></div>
+        </div>
+        <button type="submit">submit</button>
+      </form>
+
+    </div>
+    <footer>
+      <div class="footer">
+        <div class="footer-left">
+
+          <h3>About<span> N-Bakery</span></h3>
+
+          <p class="footer-links">
+            <a href="Bakery.html">Home</a>
+            |
+            <a href="Recetat.html">Recetat</a>
+            |
+            <a href="AboutUs.html">About</a>
+            |
+            <a href="ContactUs.html">Contact</a>
+          </p>
+          <p class="footer-name">© 2023 Engineering Project.</p>
+
+        </div>
+        <div class="footer_foto">
+          <a href=""><img src="img/facebook.png" alt="" style=width:70px;height:70px;></a>
+          <a href=""><img src="img/instagram.png" alt="" style=width:70px;height:70px;></a>
+          <a href=""><img src="img/tiktok.png" alt="" style=width:70px;height:70px;></a>
+          <a href=""><img src="img/twiter.png" alt="" style=width:70px;height:70px;></a>
+        </div>
+      </div>
+
+    </footer>
+
+
+    <script>
+      // Function to validate the form
+      function validateForm() {
+        var username = document.getElementById("username").value;
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        var cpassword = document.getElementById("cpassword").value;
+  
+        // Simple validation for empty fields
+        if (username == "" || email == "" || password == "" || cpassword == "") {
+          alert("All fields must be filled out");
+          return false;
+        }
+  
+        // Check if the password and confirm password match
+        if (password !== cpassword) {
+          alert("Password and Confirm Password do not match");
+          return false;
+        }
+  
+        // You can add more validation rules as needed
+  
+        return true; // If all validations pass
+      }
+    </script>
+
+
+</body>
+</div>
+</html>

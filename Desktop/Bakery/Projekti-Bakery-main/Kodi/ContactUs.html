@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF=8" >
+  <meta name="viewport" content="width=device-width,initial-scale=1" >
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>
+      Bakery
+    </title>
+    <link rel="stylesheet" href="Bakery.css">
+</head>
+  <!-- Include Header -->
+  <div id="header-container">
+    <div id="Divi1" class="clearfix">
+      <div id="logo"><img src="img/logo.png" alt="" class="img" style="height: 80.3px;
+        width: 131.41px;;"></div>
+      <div id="navigation">
+        <ul>
+          <li ><a href="LoginForm.html" style="padding-top: 8px;  background-color: initial;"><button class="P2" type="button">Sign Out</button></a></li>
+          <li><a href="Recetat.html">Recetat</a></li>
+          <li><a href="ContactUs.html">ContactUs</a></li>
+          <li><a href="AboutUs.html">AboutUs</a></li>
+          <li><a href="Bakery.html">Home</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+<body>
+
+<div id="Header">
+  <form name="form" id="form"method="post" action="Bakery.jsx" onsubmit="return validateform()">
+  <h2>Contact Us</h2>
+  <div class="input-group">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name">
+    <div class="error"></div>
+    </div>
+    <div class="input-group">
+      <label for="surname">Surname</label>
+      <input type="text" id="surname" name="surname">
+      <div class="error"></div>
+      </div>
+  
+  <div class="input-group">
+  <label for="email">Email</label>
+  <input type="text" id="email" name="email" >
+  <div class="error"></div>
+  </div>
+  <div class="input-group">
+        <label for="country">Country</label>
+        <select class="select" id="country" name="country">
+          <option value="1">Prishtina</option>
+          <option value="2">Gjilani</option>
+          <option value="3">Ferizaj</option>
+          <option value="4">Prizreni</option>
+          <option value="5">Gjakova</option>
+          <option value="6">Peja</option>
+          <option value="7">Mitrovica</option>
+        </select>
+      </div>
+    
+        <label for="subject">Subject</label>
+        <textarea
+          id="subject"
+          class="subject"
+          name="subject"
+          placeholder="Write something.."
+          style="height: 200px;"
+        ></textarea>
+
+        <button type="submit">Send</button>
+      </form>
+    </div>
+
+</body>
+  <!-- Include Footer -->
+  <div id="footer-container">
+    <footer>
+      <div class="footer">
+        <div class="footer-left">
+          <h3>About<span> N-Bakery</span></h3>
+          <p class="footer-links">
+            <a href="Bakery.html">Home</a> |
+            <a href="Recetat.html">Recetat</a> |
+            <a href="AboutUs.html">About</a> |
+            <a href="ContactUs.html">Contact</a>
+          </p>
+          <p class="footer-name">© 2023 Engineering Project.</p>
+        </div>
+        <div class="footer_foto">
+          <i class="fa fa-instagram" style="font-size:24px"></i>
+          <i class="fa fa-facebook" style="font-size:24px"></i>
+          <i class="fa fa-twitter" style="font-size:24px"></i>
+        </div>
+      </div>
+    </footer>
+    
+  </div>
+</div>
+</html>

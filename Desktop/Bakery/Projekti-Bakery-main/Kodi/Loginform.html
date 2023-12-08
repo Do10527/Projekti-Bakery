@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Sign Up | Log In</title>
+  <link rel="stylesheet" href="LoginStyle.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="title-text">
+      <div class="title login">
+         Account 
+      </div>
+      <div class="title signup">
+         Account
+      </div>
+    </div>
+    <div class="form-container">
+      <div class="slide-controls">
+         <input type="radio" name="slide" id="login" checked>
+         <input type="radio" name="slide" id="signup">
+         <label for="login" class="slide login">Login</label>
+         <label for="signup" class="slide signup">SignUp</label>
+         <div class="slider-tab"></div>
+      </div>
+      <div class="form-inner">
+         <form action="#" class="login" onsubmit="return validateLogin()">
+            <div class="field">
+               <input type="text" placeholder="Email Address" id="loginEmail" required>
+            </div>
+            <div class="field">
+               <input type="password" placeholder="Password" id="loginPassword" required>
+            </div>
+            <div class="pass-link">
+               <a href="#">Reset password?</a>
+            </div>
+            <div class="field btn">
+               <div class="btn-layer"></div>
+               <input type="submit" value="Login">
+            </div>
+            <div class="signup-link">
+               Don't Have Account? <a href="">Create A New</a>
+            </div>
+         </form>
+         <form action="#" class="signup" onsubmit="return validateSignup()">
+            <div class="field">
+               <input type="text" placeholder="Email Address" id="signupEmail" required>
+            </div>
+            <div class="field">
+               <input type="password" placeholder="Password" id="signupPassword" required>
+            </div>
+            <div class="field">
+               <input type="password" placeholder="Confirm Password" required>
+            </div>
+            <div class="field btn">
+               <div class="btn-layer"></div>
+               <input type="submit" value="SignUp">
+            </div>
+         </form>
+      </div>
+    </div>
+  </div>
+  <script src="style.js"></script>
+<script>
+  function validateLogin() {
+    const email = document.getElementById("loginEmail").value;
+    const password = document.getElementById("loginPassword").value;
+
+    // Basic email validation
+    if (!email.includes("@")) {
+      alert("Invalid email address");
+      return false;
+    }
+
+    // Basic password length validation
+    if (password.length < 8) {
+      alert("Password must be at least 8 characters long");
+      return false;
+    }
+
+    // Redirect to "Bakery.html" only if validated
+    window.location.href = "Bakery.html";
+    return false; // Prevents default form submission
+  }
+
+  function validateSignup() {
+    const email = document.getElementById("signupEmail").value;
+    const password = document.getElementById("signupPassword").value;
+
+    // Basic email validation
+    if (!email.includes("@")) {
+      alert("Invalid email address");
+      return false;
+    }
+
+    // Basic password length validation
+    if (password.length < 8) {
+      alert("Password must be at least 8 characters long");
+      return false;
+    }
+
+    // Continue with form submission
+    return true;
+  }
+</script>
+</body>
+</html>
