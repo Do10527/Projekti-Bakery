@@ -168,49 +168,7 @@
     font-weight: bold;
   }
   
-  footer {
-    width: 100%;
-    min-height: 50px;
-    text-align: center;
-    line-height: 50px;
-    margin-top: 10px;
 
-  }
-
-  
-  .footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    color: black;
-    border-top-left-radius: 15px;
-    margin-bottom: 10px;
-    border-top-right-radius: 15px;
-    background: #ffdbdb;
-  }
-  
-  .footer_foto {
-    display: flex;
-    justify-content: space-between;
-    width: 8.5%;
-  }
- 
-  
-  
-  .footer-left h3 {
-    color: #e0ac1c;
-    font: normal 36px 'Cookie', cursive;
-    margin: 0;
-  }
-  
-  .footer-name {
-    color: #8f9296;
-    font-size: 14px;
-    font-weight: normal;
-    margin: 0;
-  }
-  
   .P2 {
 
     text-align: center;
@@ -302,4 +260,399 @@ width:100px;
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
   .text {font-size: 11px}
+}
+
+
+
+/*Contact us  forma--------------------------------------------------------------------*/
+.ContactUs-Korniza
+{
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  margin-top: 20px;
+  background-image: url('img/PrapavijaAbout.jpg');
+ background-size: cover; 
+ background-position: center; 
+ width: 100%;
+ height:100%;
+ z-index: -1;
+ margin-top: -15px;
+}
+form
+{
+   /*background:#ffdbdb;*/
+   display: flex;
+   flex-direction: column;
+   padding: 2vw 4vw ;
+   width:90%;
+   max-width: 600px;
+   border-radius: 10px;
+   z-index: 1;
+
+}
+form h3{
+  color:  #ff536f;
+  font-weight:800;
+  margin-bottom: 20px;
+  text-align: center;
+  text-transform: uppercase;
+
+}
+form input ,form textarea
+{
+    border: 0;
+    margin: 10px 0;
+    padding: 20px;
+    outline: none;
+    background: #f5f5f5;
+    font-size: 16px;
+    border: 2px solid #ced4da;
+    border-radius: 30px;
+}
+
+form button
+{
+  padding: 15px;
+  background: #ff536f;
+  color:white;
+  font-size: 16px;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  width:150px;
+  margin:20px auto 0;
+  border-radius: 30px;
+}
+
+/*Gjinia-------------------------------------*/
+select {
+  width: 100%;
+  border: 0;
+  margin: 10px 0;
+  padding: 20px;
+  outline: none;
+  font-size: 16px;
+  border: 2px solid #ced4da;
+  border-radius: 30px;
+  background: #f5f5f5;
+}
+
+select option 
+{
+  background-color: #f2f2f2; 
+  color:black;
+  padding: 8px;
+}
+
+select option:checked {
+  background-color:white;
+  color:black;
+
+
+}
+/*------------------CONTACT US --------------------------------------------------------*
+/*----------------------FFOOTERI-------------------------------------------------------*/
+.footer{  
+  background: #ffdbdb;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  font: bold 16px sans-serif;
+  padding: 50px 50px 60px 50px;
+  margin-top: 10px;
+}
+ 
+.footer .footer-Majtas,
+.footer .footer-Mesi,
+.footer .footer-Djathtas{
+  display: inline-block;
+  vertical-align: top;
+}
+ 
+.footer .footer-Majtas{
+  width: 30%;
+}
+ 
+.footer h3{
+  color:black;
+  font: normal 36px 'Cookie', cursive;
+  margin: 0;
+}
+  
+.footer h3 span{
+  color:  #e01c6e;
+}
+
+ 
+.footer.footer-navigimi{
+  color:black;
+  margin: 20px 0 12px;
+}
+ 
+.footer .footer-navigimi a{
+  display:inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color:  inherit;
+}
+ 
+.footer .footer-Emri{
+  color:  #8f9296;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+}
+.Open
+{
+   color:palevioletred;
+   font-size: 14px;
+   font-weight: normal;
+   margin-top: 10px;
+}
+ 
+.footer .footer-Mesi{
+  width: 30%;
+  margin-left: 55px;
+}
+ 
+ 
+.footer .footer-Mesi i{
+  background-color: #ff8c94;
+  color: #ffffff;
+  font-size: 25px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 42px;
+  margin: 10px 15px;
+  vertical-align: middle;
+}
+ 
+.footer .footer-Mesi i.fa-envelope{
+  font-size: 17px;
+  line-height: 38px;
+}
+ 
+.footer .footer-Mesi p{
+  display: inline-block;
+  color:black;
+  vertical-align: middle;
+  margin:0;
+  font-size:12px;
+}
+ 
+.footer .footer-Mesi p span{
+  display:block;
+  font-weight: normal;
+  font-size:12px;
+  line-height:2;
+  color:black;
+}
+ 
+.footer .footer-Mesi p a{
+  color: black;
+  text-decoration: none;;
+}
+ 
+ 
+.footer .footer-Djathtas{
+  width: 30%;
+  float: right;
+}
+ 
+.footer .footer-About{
+  line-height: 20px;
+  color:  #92999f;
+  font-size: 13px;
+  font-weight: normal;
+  margin: 0px;
+   
+}
+ 
+.footer .footer-About span{
+  display: block;
+  color:#e01c6e;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+ 
+.footer .footer-links{
+  margin-top: 25px;
+}
+ 
+.footer .footer-links  a{
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  background-color:  #ff8c94;
+  border-radius: 2px;
+ 
+  font-size: 20px;
+  color:white;
+  text-align: center;
+  line-height: 35px;
+ 
+  margin-right: 3px;
+  margin-bottom: 5px;
+}
+ 
+
+@media (max-width: 880px) {
+ 
+  .footer .footer-Majtas,
+  .footer .footer-Mesi,
+  .footer .footer-Djathtas{
+    display: block;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+}
+  .footer .footer-Mesi i{
+    margin-left: 0;
+  }
+
+  /*----------------------FFOOTERI-------------------
+  /* ------------SLLAJDERI----------------------------------------------*/
+.Slajderi  
+{
+display: none;
+text-align: center;
+padding: 20px;
+z-index: 1;
+
+
+}
+
+.Slajderi  img 
+{
+
+
+padding: 50px 40px;
+position: relative;
+bottom: -330px;
+margin-right: -40%;
+line-height: 1.2;
+border-radius: 100px;
+border-style: outset;
+border-width: 2px;
+border-color:palevioletred;
+
+}
+
+.slider-korniza {
+max-width: 800px;
+position:relative;
+margin-top: 1px;
+/*z-index: 1;*/
+z-index: 1;
+
+
+
+}
+
+.prev, .next {
+cursor: pointer;
+position: absolute;
+top: 50%;
+width: auto;
+padding: 16px;
+bottom: 8px;
+color: white;
+font-weight: bold;
+font-size: 18px;
+transition: 0.6s ease;
+border-radius: 0 3px 3px 0;
+user-select: none;
+}
+
+.next {
+right: 0;
+border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+background-color: rgba(0,0,0,0.8);
+}
+
+.text {
+color:black;
+letter-spacing: 0.5px;
+padding: 50px 40px;
+position: relative;
+bottom: 8px;
+width: 50%;
+height: 0%;
+margin-left: 100%;
+line-height: 1.2;
+border-radius: 100px;
+border-style: outset;
+border-width: 2px;
+border-color:palevioletred;
+
+}
+
+
+.dot {
+cursor: pointer;
+height: 15px;
+width: 15px;
+margin: 0 5px;
+background-color:#e01c6e;
+border-radius: 50%;
+display: inline-block;
+transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+background-color:rgba(216, 112, 147, 0.767);
+}
+.fade {
+animation-name: fade;
+animation-duration: 1.5s;
+}
+
+@keyframes fade {
+from {opacity: .4} 
+to {opacity: 1}
+}
+
+
+@media only screen and (max-width: 300px) {
+.prev, .next,.text {font-size: 11px}
+}
+
+/* ------------SLLAJDERI----------------------------------------------*/
+/*--------------------ABOUT US ----------------------------------------------*/
+.About {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  margin-top: 20px;
+  background-image: url('img/PrapavijaAbout.jpg');
+ background-size: cover; 
+ background-position: center; 
+ width: 100%;
+ height:100%;
+ z-index: -1;
+ margin-top: -15px;
+
+}
+
+.Texti {
+  overflow: hidden; 
+}
+
+.Aboutus {
+  width: 40%;
+  float: left;
+}
+
+.what-we-do {
+  width: 40%;
+  float: right;
 }

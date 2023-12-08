@@ -1,102 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF=8" >
-  <meta name="viewport" content="width=device-width,initial-scale=1" >
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <title>
-      Bakery
-    </title>
-    <link rel="stylesheet" href="Bakery.css">
+  <meta charset="utf-8">
+  <title>Bakery</title>
+  <link rel="stylesheet" href="Bakery.css">
+  <link href="https://fonts.googleapis.com/css?family=Adamina" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css"
+      rel="stylesheet">
 </head>
-  <!-- Include Header -->
-  <div id="header-container">
-    <div id="Divi1" class="clearfix">
-      <div id="logo"><img src="img/logo.png" alt="" class="img" style="height: 80.3px;
-        width: 131.41px;;"></div>
-      <div id="navigation">
-        <ul>
-          <li ><a href="LoginForm.html" style="padding-top: 8px;  background-color: initial;"><button class="P2" type="button">Sign Out</button></a></li>
-          <li><a href="Recetat.html">Recetat</a></li>
-          <li><a href="ContactUs.html">ContactUs</a></li>
-          <li><a href="AboutUs.html">AboutUs</a></li>
-          <li><a href="Bakery.html">Home</a></li>
-        </ul>
+
+<script src="Bakery.jsx"></script>
+     <!-- Include Header -->
+     <div id="header-container">
+      <div id="Divi1" class="clearfix">
+        <div id="logo"><img src="img/logo.png" alt="" class="img" style="height: 80.3px;
+          width: 131.41px;;"></div>
+        <div id="navigation">
+          <ul>
+            <li ><a href="LoginForm.html" style="padding-top: 8px;  background-color: initial;"><button class="P2" type="button">Sign Out</button></a></li>
+            <li><a href="Menu.html">Menu</a></li>
+            <li><a href="ContactUs.html">ContactUs</a></li>
+            <li><a href="AboutUs.html">AboutUs</a></li>
+            <li><a href="Bakery.html">Home</a></li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
 
-<body>
-
-<div id="Header">
-  <form name="form" id="form"method="post" action="Bakery.jsx" onsubmit="return validateform()">
-  <h2>Contact Us</h2>
-  <div class="input-group">
-    <label for="name">Name</label>
-    <input type="text" id="name" name="name">
-    <div class="error"></div>
-    </div>
-    <div class="input-group">
-      <label for="surname">Surname</label>
-      <input type="text" id="surname" name="surname">
-      <div class="error"></div>
-      </div>
   
-  <div class="input-group">
-  <label for="email">Email</label>
-  <input type="text" id="email" name="email" >
-  <div class="error"></div>
-  </div>
-  <div class="input-group">
-        <label for="country">Country</label>
-        <select class="select" id="country" name="country">
-          <option value="1">Prishtina</option>
-          <option value="2">Gjilani</option>
-          <option value="3">Ferizaj</option>
-          <option value="4">Prizreni</option>
-          <option value="5">Gjakova</option>
-          <option value="6">Peja</option>
-          <option value="7">Mitrovica</option>
-        </select>
-      </div>
-    
-        <label for="subject">Subject</label>
-        <textarea
-          id="subject"
-          class="subject"
-          name="subject"
-          placeholder="Write something.."
-          style="height: 200px;"
-        ></textarea>
+  <body>
+  
+  <div id="Header"></div>
+  <!---------------ContactUS-------------------------------------------------->
+  
+     <div class="ContactUs-Korniza">
+        <form onsubmit="sendEmail(); reset(); return false;" >
+          <h3>Contact Us</h3>
+          <input type="text" id="name" placeholder="Your Name" required>
+          <input type="email" id="email" placeholder="Email id" required>
+          <input type="text" id="phone" placeholder="Phone number" required>
+          <select id="gender" name="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+          <textarea id="message" rows="4" placeholder="Haw can we help you"></textarea>
+          <button type="submit">Send</button>
+        </form>
+     </div>
 
-        <button type="submit">Send</button>
-      </form>
+     <script src="https://smtpjs.com/v3/smtp.js"></script>
+     <script>
+       function sendEmail()
+       {
+        Email.send
+        ({
+         Host : "smtp.gmail.com",
+         Username : "noora-o@live.com",
+         Password : "password",
+         To : 'do39566@ubt-uni.net',
+         From : document.getElementById("email").value,
+         Subject : "New contact form ",
+         Body : 
+         "Name:"+document.getElementById("name").value
+         +"<br> Email: "+document.getElementById("email").value
+         +"<br> Phone no: "+document.getElementById("phone").value
+         +"<br> Message: "+document.getElementById("message").value
+         })
+         .then(
+  message => alert("Message sent Succesfully")
+);
+       }
+     </script>
+
+  </body>
+<!------FOOTERI------------------------------------------------------------>
+<footer class="footer">
+  <div class="footer-Majtas">
+    <h3>N-<span>BAKERY</span></h3>
+
+    <p class="footer-navigimi">
+      <a href="Bakery.html">Home</a>
+      |
+      <a href="AboutUs.html">About Us</a>
+      |
+      <a href="ContactUs.html">Contact Us</a>
+      |
+      <a href="Recetat.html">Menu</a>
+    </p>
+
+    <p class="footer-Emri">© 2020 Engineering Project.</p>
+    </p>
+    <p class="Open">Open Hours
+      <br>Monday-Friday:
+      <br> 08:00 AM-08:00 PM
+      <br> Saturday-Sunday
+      <br> 02:00 AM- 08:00 PM
+
+  </div>
+
+  <div class="footer-Mesi">
+    <div>
+      <i class="fa fa-map-marker"></i>
+      <p><span>82 - Rr:Luan Haradinaj <a href="https://www.google.com/maps/place/Luan+Haradinaj,+Prishtina"></span> Prishtin, - 1000</p></a>
     </div>
 
-</body>
-  <!-- Include Footer -->
-  <div id="footer-container">
-    <footer>
-      <div class="footer">
-        <div class="footer-left">
-          <h3>About<span> N-Bakery</span></h3>
-          <p class="footer-links">
-            <a href="Bakery.html">Home</a> |
-            <a href="Recetat.html">Recetat</a> |
-            <a href="AboutUs.html">About</a> |
-            <a href="ContactUs.html">Contact</a>
-          </p>
-          <p class="footer-name">© 2023 Engineering Project.</p>
-        </div>
-        <div class="footer_foto">
-          <i class="fa fa-instagram" style="font-size:24px"></i>
-          <i class="fa fa-facebook" style="font-size:24px"></i>
-          <i class="fa fa-twitter" style="font-size:24px"></i>
-        </div>
-      </div>
-    </footer>
-    
+    <div>
+      <i class="fa fa-phone"></i>
+      <p>+383 045/643-412</p>
+    </div>
+    <div>
+      <i class="fa fa-envelope"></i>
+      <p>
+        <a href="mailto:support@eduonix.com">do39566@ubt-uni.net,<br />
+          yllnora.G@ubt-uni.net
+        </a>
+      </p>
+    </div>
   </div>
-</div>
+  <div class="footer-Djathtas">
+    <p class="footer-About">
+      <span>About Company</span>
+      Ne jemi nje kompani e krijuar ne vitin 2023 , qellimi yne eshte te
+      promovojm Biznesin tone , sa me ëmbel.
+    </p>
+    <div class="footer-links">
+      <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+    </div>
+  </div>
+</footer>
+  </div>
 </html>
