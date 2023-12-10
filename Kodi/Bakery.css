@@ -33,10 +33,6 @@
   transform: translate(-50%, -50%);
 }
   
-  /*#wrapper-div {
-    width: 80%;
-    margin: auto;
-  }*/
   
   .clearfix::after {
     content: " ";
@@ -45,7 +41,7 @@
   }
   
   body {
-    background-color: white; /* Light Gray */
+    background-color: white; 
   }
   
   #Divi1 {
@@ -97,6 +93,35 @@
   li a:hover {
     background-color: #ffb6c1; /* Light Pink */
   }
+
+  @media only screen and (max-width: 600px) {
+    #Divi1 {
+      text-align: center;
+    }
+  
+    #logo {
+      margin: 10px 0;
+    }
+  
+    #navigation {
+      float: none;
+      text-align: center;
+    }
+  
+    #navigation ul {
+      padding: 10px 0;
+    }
+  
+    #navigation li {
+      display: block;
+      float: none;
+      margin: 0;
+    }
+  
+    #navigation li a {
+      padding: 10px;
+    }
+  }
   
   #Header {
     min-height: 300px;
@@ -127,7 +152,7 @@
     align-items: center;
     flex-wrap: wrap;
     border-radius: 15px;
-    border: 5px outset #ff8c94; /* Light Coral */
+    border: 5px outset #ff8c94; 
     background-color: #fff;
     padding: 10px;
   }
@@ -156,7 +181,7 @@
     width: 100%;
     height: 75%;
     background-size: cover;
-    border-radius: 15px; /* Kopjoj kornizën nga Boxi */
+    border-radius: 15px; 
 
   }
   
@@ -176,7 +201,7 @@
     font-size: 11px;
     display: inline-block;
     cursor: pointer;
-    background-color: #ff8c94; /* Light Coral */
+    background-color: #ff8c94; 
     border: none;
     color: #fff;
     padding: 6px 4px;
@@ -185,8 +210,8 @@
   }
   
   .P2:hover {
-    background-color: #e44d5c; /* Light Coral - Darker */
-  }  
+    background-color: #e44d5c; 
+  }
 
 
   * {box-sizing: border-box;}
@@ -199,7 +224,7 @@ img {vertical-align: middle;}
   max-width: 700px;
   position:relative;
   margin: auto;
-
+  margin-top:10px;
   margin-right: 20px;
 }
 
@@ -652,19 +677,7 @@ select option:checked {
   border-style: outset;
   border-width: 2px;
   border-color:palevioletred;
-/*
- line-height: 1.5;
- border-radius: 100px;
- border-style: outset;
- border-width: 2px;
- border-color:palevioletred;
- color:black;
- letter-spacing: 0.5px;
- padding: 20px 20px;
- position:relative;
- margin-bottom:-5%;
- margin-left: 100%;
- */
+
 
  }
  
@@ -699,3 +712,4 @@ select option:checked {
  }
  
  /* ------------SLLAJDERI----------------------------------------------*/
+ 
