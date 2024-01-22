@@ -1,3 +1,4 @@
+
 const loginText = document.querySelector(".title-text .login");
 const loginForm = document.querySelector("form.login");
 const loginBtn = document.querySelector("label.login");
@@ -19,17 +20,12 @@ signupLink.onclick = (()=>{
  return false;
 });
 
-// Add a submit event listener to the login form
+
 loginForm.addEventListener("submit", function (event) {
-  // Prevent the default form submission behavior
+ 
   event.preventDefault();
   
-  // Redirect to the Home page
+ 
   redirectToHomePage();
 });
 
-// Function to redirect to the Home page
-// function redirectToHomePage() {
-//   // Assuming you want to redirect to "Bakery.html"
-//   window.location.href = "Bakery.html";
-// }

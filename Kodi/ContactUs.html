@@ -38,21 +38,45 @@
     </div>
   <!---------------ContactUS-------------------------------------------------->
   
-     <div class="ContactUs-Korniza">
-        <form onsubmit="sendEmail(); reset(); return false;" >
+   <!--<form onsubmit="sendEmail(); reset(); return false;" >-->
+    <div class="ContactUs-Korniza">
+      <form name="contact-form" action="ContactUs.php" method="post" onsubmit="return validation();">
           <h3>Contact Us</h3>
-          <input type="text" id="name" placeholder="Your Name" required>
-          <input type="email" id="email" placeholder="Email id" required>
-          <input type="text" id="phone" placeholder="Phone number" required>
+          <input type="text" id="name" name="name" placeholder="Your Name" required>
+          <input type="email" id="email" name="email" placeholder="Email id" required>
+          <input type="text" id="phone" name="phone" placeholder="Phone number" required>
           <select id="gender" name="gender">
-            <option value="male">Male</option>
-            <option value="female">Female</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
           </select>
-          <textarea id="message" rows="4" placeholder="Haw can we help you"></textarea>
+          <textarea id="message" name="message" rows="4" placeholder="How can we help you"></textarea>
           <button type="submit">Send</button>
-        </form>
-     </div>
+      </form>
+  
+      <script>
+          function validation() {
+              var name = document.getElementById('name').value;
+              var phone = document.getElementById('phone').value;
+              var email = document.getElementById('email').value;
+              var gender = document.getElementById('gender').value;
+              var message = document.getElementById('message').value;
+  
+              if (name === '' || phone === '' || email === '') {
+                  alert("Fill out required fields!");
+                  return false;
+              } else if (isNaN(phone) || phone.length < 9 || !(/^\d+$/.test(phone))) {
+                  alert("Phone number must contain numbers and be at least 4 characters!");
+                  return false;
+              } else {
+                  return true;
+              }
+          }
+      </script>
+  </div>
+  
 
+
+<!--- Permes  webfaqes SMTPJS-ku dergohen en emailin tim , kush do qe kontakton ne webfaqe .
      <script src="https://smtpjs.com/v3/smtp.js"></script>
      <script>
        function sendEmail()
@@ -76,6 +100,7 @@
 );
        }
      </script>
+    -->
 
   </body>
 <!------FOOTERI------------------------------------------------------------>
