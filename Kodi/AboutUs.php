@@ -1,3 +1,71 @@
+<?php
+$host = "localhost";
+$dbusername = "root";
+$dbpassword = "";
+$dbname = "bakery";
+
+// Connect to the database
+$conn = new mysqli($host, $dbusername, $dbpassword, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Handle form submission for updating data
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $title = $_POST["title"];
+    $content = $_POST["content"];
+
+    $stmt = $conn->prepare("UPDATE about_us SET title = ?, content = ? WHERE id = 1");
+    $stmt->bind_param("ss", $title, $content);
+
+    if ($stmt->execute()) {
+        echo "Data updated successfully!";
+    } else {
+        echo "Error: " . $stmt->error;
+    }
+
+    $stmt->close();
+}
+
+// Retrieve data from the database
+$aboutUsData = getAboutUsData();
+
+// Close the database connection
+/*$conn->close();*/
+
+// Function to retrieve data from the about_us table
+function getAboutUsData() {
+    global $conn;
+    $result = $conn->query("SELECT * FROM about_us WHERE id = 1");
+
+    if ($result->num_rows > 0) {
+        return $result->fetch_assoc();
+    } else {
+        return false;
+    }
+}
+function getWhatWeDoContent() {
+    global $conn;
+    
+    if ($conn->connect_error) {
+        $conn = new mysqli($host, $dbusername, $dbpassword, $dbname);
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+    }
+
+    $result = $conn->query("SELECT content FROM about_us WHERE id = 2");
+
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        return $row['content'];
+    } else {
+        return false;
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,19 +106,25 @@
         font-size:40px;padding-bottom: 100px;color:lightcoral">About us </p></div>
   </div>
 
-<div class="About">
-  <div class="Texti">
-    <div class="Aboutus">
-    <h1 class="T1">About Us</h1>
-      <p>Our Company has started its operation since 2023 as flour Production Company. With its 4000 m2 facility it is one of the best in region. Firstly, we have started producing varieties of flour products for Kosovo's market and exporting to neighbor countries. The factory is equipped with a modern lab which helps maintain the quality of our products.</p>-->
-    </div>
+  <div class="About">
+        <div class="Texti">
+            <div class="Aboutus">
+                <h1 class="T1"><?php echo $aboutUsData['title']; ?></h1>
+                <p><?php echo $aboutUsData['content']; ?></p>
+</div>
+
     <div class="what-we-do">
-      <h2 class="T2">What do we do?</h2>
+    <h2 class="T2">What do we do?</h2>
+    <p><?php echo getWhatWeDoContent(); ?></p>
+    </div>
+
+
+      <!--<h2 class="T2">What do we do?</h2>
       <p>We cook traditional and modern cakes, as well as cookies, and different puddings. We offer sweet and non-sweet food items, and we also accept new ideas from our customers.We offer a variety of hot beverages including Downeast Coffee, Tea, Espresso and Cappuccino as well as a variety of Cold Beverages including ice coffee.
         Breakfast and Lunch Sandwiches are served all day long. (all lunch sandwiches are served on Homemade Sunnyfield Brickoven Bakery Bread)
         We have a variety of pastry and desserts on hand every day.
         We specialize in custom cakes! If you’re looking for a cake, contact us to order ahead. Most cake orders should be placed at least 2 weeks in advance. Please NEVER hesitate to call with a last minute cake request, we just may be able to squeeze you in!</p>
-    </div>
+    </div>-->
   </div>
   
       

@@ -21,8 +21,8 @@
 }
 
 .Boxi:hover {
-  -ms-transform: scale(1.1); /* IE 9 */
-  -webkit-transform: scale(1.1); /* Safari 3-8 */
+  -ms-transform: scale(1.1); 
+  -webkit-transform: scale(1.1); 
   transform: scale(1.1); 
 }
 
@@ -570,34 +570,36 @@ select option:checked {
 
 .what-we-do {
   width: 40%;
-  float: right;
+  float: left;
 }
-.Texti 
-{
-   letter-spacing: 2px;
+
+.Texti {
+  letter-spacing: 2px;
   line-height: 200%;
   margin-top: 5px;
   padding: 8px;
- 
+  display: flex;
+  justify-content: space-between;
 }
 
-.Texti h1 , h2 {
+.Texti h1, h2 {
   text-align: center;
   text-transform: uppercase;
   color: #ff8c94;
   margin-top: 100px;
-  
 }
+.T1, .T2 {
+  width: 49%; 
+}
+
 .Texti p {
   text-indent: 40px;
-  text-align:center;
+  text-align: center;
   letter-spacing: 2px;
   font: italic 1.2rem "Fira Sans", serif;
   font-size: 20px;
   margin-top: 20px;
   padding-left: 15px;
-  
-  
 }
 
  /* ------------SLLAJDERI----------------------------------------------*/
