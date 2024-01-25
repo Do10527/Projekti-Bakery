@@ -9,7 +9,7 @@ $conn = new mysqli($host, $dbusername, $dbpassword, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
+/*Contact Tabela */
 $resultContact = $conn->query("SELECT * FROM contact ORDER BY ID DESC");
 
 $messages = [];
@@ -19,7 +19,7 @@ if ($resultContact->num_rows > 0) {
         $messages[] = $row;
     }
 }
-
+/*Data tabela */
 $resultData = $conn->query("SELECT * FROM data ORDER BY id DESC");
 
 $data = [];
@@ -31,9 +31,22 @@ if ($resultData->num_rows > 0) {
 } else {
     echo "Error retrieving data: " . $conn->error;
 }
+/*Menu tabela */
+$result = $conn->query("SELECT * FROM menu_table ORDER BY id DESC");
+
+$menuData = [];
+
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $menuData[] = $row;
+    }
+} else {
+    echo "No data available in menu_table.";
+}
 
 $conn->close();
 ?>
+
 
 
 
@@ -101,6 +114,22 @@ $conn->close();
         <?php else : ?>
             <p>No data available.</p>
         <?php endif; ?>
+
+
+        <h2>Te dhenat nga Menu</h2>
+        <div class="Fotot">
+            <?php foreach ($menuData as $menuItem) : ?>
+                <div class="Boxi">
+                    <img src="data:image/jpeg;base64,<?php echo base64_encode($menuItem['img']); ?>" alt="" class="img">
+                    <div class="views_date">
+                        <p>
+                            <?php echo $menuItem['title']; ?><br>
+                            <?php echo $menuItem['data_created']; ?><br>
+                            <?php echo $menuItem['price']; ?>
+                        </p>
+                    </div>
+                </div>
+            <?php endforeach; ?>
     </section>
 
     <style>
