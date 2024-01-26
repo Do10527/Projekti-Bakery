@@ -1,54 +1,95 @@
 <?php
-
 $host = "localhost";
 $dbusername = "root";
 $dbpassword = "";
 $dbname = "bakery";
 
 $conn = new mysqli($host, $dbusername, $dbpassword, $dbname);
+
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-/*Contact Tabela */
-$resultContact = $conn->query("SELECT * FROM contact ORDER BY ID DESC");
+function getContactFormMessages($conn) {
+    $messages = [];
+    $result = $conn->query("SELECT * FROM contact ORDER BY ID DESC");
 
-$messages = [];
-
-if ($resultContact->num_rows > 0) {
-    while ($row = $resultContact->fetch_assoc()) {
-        $messages[] = $row;
+    if ($result) {
+        while ($row = $result->fetch_assoc()) {
+            $messages[] = $row;
+        }
+    } else {
+        echo "Error fetching contact form messages: " . $conn->error;
     }
+
+    return $messages;
 }
-/*Data tabela */
-$resultData = $conn->query("SELECT * FROM data ORDER BY id DESC");
+function getAboutUsData($conn) {
+    $aboutUsData = [];
+    $result = $conn->query("SELECT * FROM about_us");
 
-$data = [];
-
-if ($resultData->num_rows > 0) {
-    while ($row = $resultData->fetch_assoc()) {
-        $data[] = $row;
+    if ($result) {
+        while ($row = $result->fetch_assoc()) {
+            $aboutUsData[] = $row;
+        }
+    } else {
+        echo "Error fetching About Us data: " . $conn->error;
     }
-} else {
-    echo "Error retrieving data: " . $conn->error;
-}
-/*Menu tabela */
-$result = $conn->query("SELECT * FROM menu_table ORDER BY id DESC");
 
-$menuData = [];
-
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        $menuData[] = $row;
-    }
-} else {
-    echo "No data available in menu_table.";
+    return $aboutUsData;
 }
 
-$conn->close();
+function getMenuData($conn) {
+    $menuData = [];
+    $result = $conn->query("SELECT * FROM menu_table");
+
+    if ($result) {
+        while ($row = $result->fetch_assoc()) {
+            $menuData[] = $row;
+        }
+    } else {
+        echo "Error fetching Menu data: " . $conn->error;
+    }
+
+    return $menuData;
+}
+
+function getData($conn) {
+    $data = [];
+    $result = $conn->query("SELECT * FROM data");
+
+    if ($result) {
+        while ($row = $result->fetch_assoc()) {
+            $data[] = $row;
+        }
+    } else {
+        echo "Error fetching Menu data: " . $conn->error;
+    }
+
+    return $data;
+}
+
+function getOrdersData($conn) {
+    $ordersData = [];
+    $result = $conn->query("SELECT * FROM orders");
+
+    if ($result) {
+        while ($row = $result->fetch_assoc()) {
+            $ordersData[] = $row;
+        }
+    } else {
+        echo "Error fetching Orders data: " . $conn->error;
+    }
+
+    return $ordersData;
+}
+
+function printSection($title, $data) {
+    echo "<h3>$title</h3>";
+    echo "<pre>";
+    print_r($data);
+    echo "</pre>";
+}
 ?>
-
-
-
 
 
 <!DOCTYPE html>
@@ -57,176 +98,257 @@ $conn->close();
 <head>
     <meta charset="utf-8">
     <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="Bakery.css">
     <link href="https://fonts.googleapis.com/css?family=Adamina" rel="stylesheet">
     <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
+<style>
+    html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Adamina', sans-serif;
+}
+
+header, nav, section, footer {
+    padding: 20px;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+nav {
+    background-color: #555;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+section {
+    margin-top: 20px;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 15px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #555;
+    color: #fff;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+}
+
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 600px) {
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+}
+</style>   
 </head>
 
 <body>
-
     <header>
         <h1>Admin Dashboard</h1>
     </header>
-
     <nav>
         <a href="#">Home</a>
         <a href="#">Users</a>
-        <a href="#">Settings</a>
+        <a href="#">Admin</a>
         <a href="logout.php">Logout</a>
     </nav>
-
     <section>
-        <h2>Welcome, Admin!</h2>
-
-        <p>This is the admin dashboard. You can manage users, settings, etc.</p>
-
-        <!-- Te dhenat nga ContactUs -->
-        <h2>Contact Form Messages</h2>
-        <?php if (!empty($messages)) : ?>
-            <ul>
-                <?php foreach ($messages as $message) : ?>
-                    <li>
-                        <strong>Name:</strong> <?php echo $message['name']; ?><br>
-                        <strong>Email:</strong> <?php echo $message['email']; ?><br>
-                        <strong>Phone:</strong> <?php echo $message['phone']; ?><br>
-                        <strong>Gender:</strong> <?php echo $message['gender']; ?><br>
-                        <strong>Message:</strong> <?php echo $message['message']; ?><br>
-                    </li>
-                <?php endforeach; ?>
-            </ul>
-        <?php else : ?>
-            <p>No contact form messages available.</p>
-        <?php endif; ?>
-
-        <h2>Te dhenat nga  Bakery</h2>
-        <?php if (!empty($data)) : ?>
-            <div class="image-container">
-                <?php foreach ($data as $item) : ?>
-                    <div class="image-box">
-                        <strong>Title:</strong> <?php echo $item['title']; ?><br>
-                        <strong>Content:</strong> <?php echo $item['content']; ?><br>
-                        <?php if (!empty($item['image'])) : ?>
-                            <img src="data:image/jpeg;base64,<?php echo base64_encode($item['image']); ?>" alt="Image" class="img-thumbnail">
-                        <?php endif; ?>
-                    </div>
-                <?php endforeach; ?>
-            </div>
-        <?php else : ?>
-            <p>No data available.</p>
-        <?php endif; ?>
-
-
-        <h2>Te dhenat nga Menu</h2>
-        <div class="Fotot">
-            <?php foreach ($menuData as $menuItem) : ?>
-                <div class="Boxi">
-                    <img src="data:image/jpeg;base64,<?php echo base64_encode($menuItem['img']); ?>" alt="" class="img">
-                    <div class="views_date">
-                        <p>
-                            <?php echo $menuItem['title']; ?><br>
-                            <?php echo $menuItem['data_created']; ?><br>
-                            <?php echo $menuItem['price']; ?>
-                        </p>
-                    </div>
-                </div>
-            <?php endforeach; ?>
+        <h2>Welcome to Your Dashboard!</h2>
     </section>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
+<section>
+    <h2>ContactUs!</h2>
+    <?php
+    $contactMessages = getContactFormMessages($conn);
+
+    if (!empty($contactMessages)) {
+        echo '<table border="1">';
+        echo '<tr><th>ID</th><th>Name</th><th>Email</th><th>Phone</th><th>Gender</th><th>Message</th></tr>';
+
+        foreach ($contactMessages as $message) {
+            echo '<tr>';
+            echo '<td>' . $message['ID'] . '</td>';
+            echo '<td>' . $message['name'] . '</td>';
+            echo '<td>' . $message['email'] . '</td>';
+            echo '<td>' . $message['phone'] . '</td>';
+            echo '<td>' . $message['gender'] . '</td>';
+            echo '<td>' . $message['message'] . '</td>';
+            echo '</tr>';
         }
 
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
+        echo '</table>';
+    } else {
+        echo '<p>No contact form messages found.</p>';
+    }
+    ?>
+</section>
+
+<section>
+    <h2>AboutUS!</h2>
+    <?php
+    $aboutUsData = getAboutUsData($conn);
+
+    if (!empty($aboutUsData)) {
+        echo '<table border="1">';
+        echo '<tr><th>ID</th><th>Title</th><th>Content</th></tr>';
+
+        foreach ($aboutUsData as $data) {
+            echo '<tr>';
+            echo '<td>' . $data['id'] . '</td>';
+            echo '<td>' . $data['title'] . '</td>';
+            echo '<td>' . $data['content'] . '</td>';
+            echo '</tr>';
         }
 
-        nav {
-            background-color: #444;
-            color: #fff;
-            padding: 10px;
+        echo '</table>';
+    } else {
+        echo '<p>No About Us data found.</p>';
+    }
+    ?>
+</section>
+
+
+<section>
+    <h2>Menu!</h2>
+    <?php
+    $menuData = getMenuData($conn);
+
+    if (!empty($menuData)) {
+        echo '<table border="1">';
+        echo '<tr><th>ID</th><th>Title</th><th>Data Created</th><th>Price</th></tr>';
+
+        foreach ($menuData as $data) {
+            echo '<tr>';
+            echo '<td>' . $data['id'] . '</td>';
+            echo '<td>' . $data['title'] . '</td>';
+            echo '<td>' . $data['data_created'] . '</td>';
+            echo '<td>' . $data['price'] . '</td>';
+            echo '</tr>';
         }
 
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin-right: 20px;
-            font-weight: bold;
-        }
+        echo '</table>';
+    } else {
+        echo '<p>No Menu data found.</p>';
+    }
+    ?>
+</section>
 
-        section {
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin: 20px;
-        }
+<section>
+    <h2>Orders!</h2>
+    <?php
+    $ordersData = getOrdersData($conn);
 
-        h2 {
-            color: #333;
-            padding: 10px;
-            border-bottom: 2px solid #ddd;
+    if (!empty($ordersData)) {
+        echo '<table border="1">';
+        echo '<tr><th>ID</th><th>First Name</th><th>Last Name</th><th>Email</th><th>Phone</th><th>Contact Method</th><th>Order Date</th><th>Size</th><th>Cake Flavor</th><th>Buttercream Flavor</th><th>Ganache Drip</th><th>Fancy</th><th>Message</th></tr>';
+        
+        foreach ($ordersData as $data) {
+            echo '<tr>';
+            echo '<td>' . (isset($data['ID']) ? $data['ID'] : '') . '</td>';
+            echo '<td>' . (isset($data['firstname']) ? $data['firstname'] : '') . '</td>';
+            echo '<td>' . (isset($data['lastname']) ? $data['lastname'] : '') . '</td>';
+            echo '<td>' . (isset($data['email']) ? $data['email'] : '') . '</td>';
+            echo '<td>' . (isset($data['phone']) ? $data['phone'] : '') . '</td>';
+            echo '<td>' . (isset($data['contact_method']) ? $data['contact_method'] : '') . '</td>';
+            echo '<td>' . (isset($data['order_date']) ? $data['order_date'] : '') . '</td>';
+            echo '<td>' . (isset($data['size']) ? $data['size'] : '') . '</td>';
+            echo '<td>' . (isset($data['cake_flavor']) ? $data['cake_flavor'] : '') . '</td>';
+            echo '<td>' . (isset($data['buttercream_flavor']) ? $data['buttercream_flavor'] : '') . '</td>';
+            echo '<td>' . (isset($data['ganache_drip']) ? $data['ganache_drip'] : '') . '</td>';
+            echo '<td>' . (isset($data['fancy']) ? $data['fancy'] : '') . '</td>';
+            echo '<td>' . (isset($data['message']) ? $data['message'] : '') . '</td>';
+            echo '</tr>';
         }
+        
+        echo '</table>';
+    } else {
+        echo '<p>No Orders data found.</p>';
+    }
+    ?>
+</section>
 
-        .image-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
+<section>
+<h2>Insertimi i te dhenve!</h2>
+<section>
+<h2>Data from Bakery</h2>
+<?php
+$data = getData($conn);
 
-        .image-box {
-            width: 30%;
-            margin-bottom: 20px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
+if (!empty($data)) {
+    echo '<table border="1">';
+    echo '<tr><th>ID</th><th>Title</th><th>Content</th></tr>';
 
-        .image-box img {
-            width: 50%;
-            height: auto;
-            object-fit: cover;
-            border-radius: 5px;
-            margin-top: 10px;
-        }
+    foreach ($data as $item) {
+        echo '<tr>';
+        echo '<td>' . $item['id'] . '</td>';
+        echo '<td>' . $item['title'] . '</td>';
+        echo '<td>' . $item['content'] . '</td>';
+         echo '<td><img src="data:image/jpeg;base64,' . base64_encode($item['image']) . '" alt="Image" style="width:100px;height:100px;"></td>';
+         echo '<td><a href="data:application/pdf;base64,' . base64_encode($item['file']) . '" target="_blank">View PDF</a></td>';
+        echo '</tr>';
+    }
 
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        li {
-            margin-bottom: 20px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        strong {
-            color: #555;
-        }
-
-        footer {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
-
+    echo '</table>';
+} else {
+    echo '<p>No data found.</p>';
+}
+?>
+</section>
+    
     <footer>
         &copy; 2024 Admin Dashboard
     </footer>
 
 </body>
-
 </html>

@@ -34,7 +34,6 @@ $conn->close();
     <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css"
         rel="stylesheet">
   </head>
-      <!-- Include Header -->
       <div id="header-container">
         <div id="Divi1" class="clearfix">
           <div id="logo"><img src="img/logo.png" alt="" class="img" style="height: 80.3px;
@@ -52,8 +51,6 @@ $conn->close();
       </div>
 
       <body>
-
-        
         <div class="sweet-container">
           <img src="img/sweet.jpg" alt="Snow" style="width:100%; height: 400px;">
           <div class="centered">   <p style="font-family:Castellar;
@@ -111,7 +108,7 @@ function showSlides() {
   }
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
-  setTimeout(showSlides, 4000); // Change image every 4 seconds
+  setTimeout(showSlides, 4000); 
 }
 </script>
 

@@ -1,7 +1,6 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<!--Test-->
 <head>
   <meta charset="utf-8">
   <title>Bakery</title>
@@ -10,9 +9,6 @@
   <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css"
       rel="stylesheet">
 </head>
-
-
-  <!-- Include Header -->
   <div id="header-container">
     <div id="Divi1" class="clearfix">
       <div id="logo"><img src="img/logo.png" alt="" class="img" style="height: 80.3px;
@@ -29,8 +25,6 @@
     </div>
   </div>
   <body>
-
-  <!-- Main Content -->
   <div id="content-container">
     <div class="sweet-container">
       <img src="img/photoss1.jpg" alt="Snow" style="width:100%; height: 400px;">
@@ -38,8 +32,6 @@
           font-size:90px;color: black;">SWEET BAKERY </p></div>
     </div>
         
-    
-
       </div>
       <div class="slideshow-container" >
 
@@ -186,139 +178,244 @@
      </div> 
     </main>
   </div>
-<section>
+  <section>
+    <form action="data.php" method="post" enctype="multipart/form-data">
+  
+      <label for="title">Title:</label>
+      <input type="text" name="title" required>
+  
+      <label for="content">Content:</label>
+      <textarea name="content" required></textarea>
+  
+      <label for="image">Image:</label>
+      <input type="file" name="image">
+  
+      <input type="submit" value="Submit">
+  </form>
+  
+  <div class=Order>
   <form action="data.php" method="post" enctype="multipart/form-data">
-
-    <label for="title">Title:</label>
-    <input type="text" name="title" required>
-
-    <label for="content">Content:</label>
-    <textarea name="content" required></textarea>
-
-    <label for="image">Image:</label>
-    <input type="file" name="image">
-
-    <input type="submit" value="Submit">
-</form>
-
-</section>
-<style>
-
-section {
-  background: #ffdbdb;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-form {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #ffdbdb;
-  border: 1px solid #ddd;
-  border-radius: 15px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: bold;
-}
-
-input[type="text"],
-textarea,
-input[type="file"] {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  box-sizing: border-box;
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
-
-
-textarea {
-  height: 150px;
-}
-
-input[type="submit"] {
-  background-color: pink;
-  color: #fff;
-  padding: 12px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-input[type="submit"]:hover {
-  background-color: #ff8c94;
-}
-
-</style>
-</body>
-
-<!------FOOTERI------------------------------------------------------------>
-<footer class="footer">
-  <div class="footer-Majtas">
-    <h3>N-<span>BAKERY</span></h3>
-
-    <p class="footer-navigimi">
-      <a href="Bakery.html">Home</a>
-      |
-      <a href="AboutUs.html">About Us</a>
-      |
-      <a href="ContactUs.html">Contact Us</a>
-      |
-      <a href="Recetat.html">Menu</a>
-    </p>
-
-    <p class="footer-Emri">© 2020 Engineering Project.</p>
-    </p>
-    <p class="Open">Open Hours
-      <br>Monday-Friday:
-      <br> 08:00 AM-08:00 PM
-      <br> Saturday-Sunday
-      <br> 02:00 AM- 08:00 PM
-
+  <p>POROSIT TORTETN TENDE:</p>
+    <p>First Name:</p>
+      <input type="text" name="firstname" placeholder="firstname">
+    <p>Last Name:</p>
+    <input type="text" name="lastname" placeholder="lastname">
+    <p>Email:</p>
+    <input type="email" name="email" placeholder="example@gmail.com">
+    <p>Phone:</p>
+    <input type="tel" name="phone" placeholder="###-###-####">
+    <p>Prefered contact method:</p>
+    <select class="option" name="option">
+    <option value="contact">Contect me</option>
+              <option value="contact">call</option>
+              <option value="contact">text me</option>
+              <option value="contact">Email me</option>
+          </select>
+  <p>When do you need your cake?</p>
+  <input type="date" id="orderDate" name="orderDate">
+    <p>Madhesia?</p>
+    <select class="option" name="option">
+              <option value="size">e vogel (2-3 persona)</option>
+              <option value="size">e mesme (4-8 persona)</option>
+              <option value="size">e madhe (8-12 persona)</option>
+          </select>
+    <p>Which cake flavor(s) would you like?</p>
+    <select class="option" name="option">
+              <option value="cake">vanilla</option>
+              <option value="cake">chocolate</option>
+              <option value="cake">earlgrey</option>
+              <option value="cake">Caramel</option>
+              <option value="cake">Lemon</option>
+              <option value="cake">Spice</option>
+              <option value="cake">Carrot</option>
+              <option value="cake">Chocolate Stout</option>
+          </select>
+  
+          <p>Which buttercream flavors sound tasty?</p>
+          <select class="option" name="option">
+              <option value="frosting">vanilla</option>
+              <option value="frosting">Dark Chocolate</option>
+              <option value="frosting">Cream Cheese</option>
+              <option value="frosting">Mascarpone</option>
+              <option value="frosting">>Mocha</option>
+              <option value="frosting">Berry</option>
+              <option value="frosting">Lemon</option>
+              <option value="frosting">Coffee</option>
+          </select>
+  
+   
+    <p>Would you like a ganache drip?</p>
+    <select class="option" name="option">
+              <option value="drip">Chocolate</option>
+              <option value="drip">White Chocolate</option>
+              <option value="drip">Salted Caramel</option>
+          </select>
+   
+    
+    <p>Shall we fancy it up?</p>
+    
+    <select class="option" name="option">
+              <option value="fancy">Yes, please!</option>
+              <option value="fancy">No, thanks! Keep it basic. </option>
+          </select>
+  
+    <p>Any other information we may need?</p>
+     <div class="option">
+      <textarea rows="10" cols="100" class="FormMessage" type="text" name="message" placeholder="As a matter of fact...">
+       </textarea>
+    </div>
+    <button type="submit">Send</button>
+   </form>
   </div>
-
-  <div class="footer-Mesi">
-    <div>
-      <i class="fa fa-map-marker"></i>
-      <p><span>82 - Rr:Luan Haradinaj <a href="https://www.google.com/maps/place/Luan+Haradinaj,+Prishtina"></span> Prishtin, - 1000</p></a>
-    </div>
-
-    <div>
-      <i class="fa fa-phone"></i>
-      <p>+383 045/643-412</p>
-    </div>
-    <div>
-      <i class="fa fa-envelope"></i>
-      <p>
-        <a href="mailto:support@eduonix.com">do39566@ubt-uni.net,<br />
-          yllnora.G@ubt-uni.net
-        </a>
+  </section>
+  
+  <style>
+  
+  section
+  {
+    background-color: #ffdbdb;
+  }
+  form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffdbdb;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  
+  form[action="data.php"] {
+    float: left;
+    margin-right: 20px;
+  }
+  .Order form {
+    float: right;
+  }
+  
+  form p {
+    margin-bottom: 10px;
+  }
+  
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="tel"],
+  form textarea,
+  form select,
+  .Order form input[type="text"],
+  .Order form input[type="email"],
+  .Order form input[type="tel"],
+  .Order form textarea,
+  .Order form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+  }
+  
+  form select,
+  .Order form select {
+    padding: 10px;
+  }
+  
+  form input[type="submit"],
+  .Order form input[type="submit"] {
+    background-color: pink;
+    color: #fff;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  form input[type="submit"]:hover,
+  .Order form input[type="submit"]:hover {
+    background-color: #ff8c94;
+  }
+  
+  .formMessage textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  section:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  </style>
+  </body>
+  
+  <!------FOOTERI------------------------------------------------------------>
+  <footer class="footer">
+    <div class="footer-Majtas">
+      <h3>N-<span>BAKERY</span></h3>
+  
+      <p class="footer-navigimi">
+        <a href="Bakery.html">Home</a>
+        |
+        <a href="AboutUs.html">About Us</a>
+        |
+        <a href="ContactUs.html">Contact Us</a>
+        |
+        <a href="Recetat.html">Menu</a>
       </p>
+  
+      <p class="footer-Emri">© 2020 Engineering Project.</p>
+      </p>
+      <p class="Open">Open Hours
+        <br>Monday-Friday:
+        <br> 08:00 AM-08:00 PM
+        <br> Saturday-Sunday
+        <br> 02:00 AM- 08:00 PM
+  
     </div>
-  </div>
-  <div class="footer-Djathtas">
-    <p class="footer-About">
-      <span>About Company</span>
-      Ne jemi nje kompani e krijuar ne vitin 2023 , qellimi yne eshte te
-      promovojm Biznesin tone , sa me ëmbel.
-    </p>
-    <div class="footer-links">
-      <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
-      <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
-      <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+  
+    <div class="footer-Mesi">
+      <div>
+        <i class="fa fa-map-marker"></i>
+        <p><span>82 - Rr:Luan Haradinaj <a href="https://www.google.com/maps/place/Luan+Haradinaj,+Prishtina"></span> Prishtin, - 1000</p></a>
+      </div>
+  
+      <div>
+        <i class="fa fa-phone"></i>
+        <p>+383 045/643-412</p>
+      </div>
+      <div>
+        <i class="fa fa-envelope"></i>
+        <p>
+          <a href="mailto:support@eduonix.com">do39566@ubt-uni.net,<br />
+            yllnora.G@ubt-uni.net
+          </a>
+        </p>
+      </div>
     </div>
-  </div>
-</footer>
-  </div>
-</html>
+    <div class="footer-Djathtas">
+      <p class="footer-About">
+        <span>About Company</span>
+        Ne jemi nje kompani e krijuar ne vitin 2023 , qellimi yne eshte te
+        promovojm Biznesin tone , sa me ëmbel.
+      </p>
+      <div class="footer-links">
+        <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </footer>
+    </div>
+  </html>
