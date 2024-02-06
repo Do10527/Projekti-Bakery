@@ -70,68 +70,68 @@
       const email = document.getElementById("loginEmail").value;
       const password = document.getElementById("loginPassword").value;
   
-      // Basic email validation
+      
       if (!email.includes("@")) {
         alert("Invalid email address");
         return false;
       }
   
-      // Basic password length validation
+    
       if (password.length < 8) {
         alert("Password must be at least 8 characters long");
         return false;
       }
   
-      // Redirect to "Bakery.html" only if validated
+      
       window.location.href = "Bakery.html";
-      return false; // Prevents default form submission
+      return false; 
     }
   
-    function validateSignup() {
+   /* function validateSignup() {
       const email = document.getElementById("signupEmail").value;
       const password = document.getElementById("signupPassword").value;
   
-      // Basic email validation
+      
       if (!email.includes("@")) {
         alert("Invalid email address");
         return false;
       }
   
-      // Basic password length validation
+      
       if (password.length < 8) {
         alert("Password must be at least 8 characters long");
         return false;
       }
   
-            // Redirect to "Bakery.html" only if validated
+          
             window.location.href = "Bakery.html";
-        return false; // Prevents default form submission
-      }
+        return false; 
+      }*/
   
       function validateSignup() {
         const email = document.getElementById("signupEmail").value;
         const password = document.getElementById("signupPassword").value;
         const confirmPassword = document.getElementById("confirmPassword").value;
   
-        // Basic email validation
+        
         if (!email.includes("@")) {
           alert("Invalid email address");
           return false;
         }
   
-        // Basic password length validation
+        
         if (password.length < 8) {
           alert("Password must be at least 8 characters long");
           return false;
         }
   
-        // Password and confirm password match validation
+      
         if (password !== confirmPassword) {
           alert("Passwords do not match");
           return false;
         }
   
-        // Continue with form submission
+       
         return true;
       }
     </script>
